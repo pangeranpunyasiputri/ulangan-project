@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+<content="width=device-width, initial-scale=1.0">
+    <title>POSTER PROJEK ULANGAN 2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body{
+            background:#ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .poster{
+            width: 400px;
+            background: #ffe600;
+            border: 5px solid #ffcc33;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 10px;
+        rgba(0,0,0,0.1);
+        }
+
+        /*Bagian Gambar Atas dan Bawah
+        */
+        .top-images, .bottom-images {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+        }
+
+        .top-images img, .bottom-images img {
+            width: 33.33%;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        /*Judul*/
+        .title {
+            background: 
+            linear-gradient(#fff35c, #fef9a1);
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .title h1 {
+            color: #ff4e00;
+            font-size: 36px;
+            letter-spacing: 2px;
+        }
+
+        .title h2 {
+            color: #73ff00;
+            font-size: 32px;
+            margin-top: 5px;
+        }
+
+        .title p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        /*Bar Warna*/
+        .color-bars { 
+            display: flex;
+            width: 100%;
+        }
+
+        .color-bars .bar{
+            flex: 1;
+            height: 25px;
+        }
+
+        .pink {background: #f8b0d8;}
+        .blue {background: #7ec8e3;}
+        .orange {background: #ff9950;}
+        .green {background: #a4de02;}
+
+        /*Bagian Artis*/
+        .artist {
+            background: #f4a3c1;
+            text-align: center;
+            padding: 15px 20px;
+        }
+
+        .artist h3 {
+            color: #4b1d1d;
+            letter-spacing: 1px;
+        }
+
+        .artist p {
+            font-size: 13px;
+            color: #3a3a3a;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+    </style>
+</content>
+</head>
+<body>
+    <div class="poster">
+        
+        <!--Bagian Atas: 3 Gambar-->
+        <div class="top-images">
+            <img src="navimlbb.jpg" alt="Image 1">
+            <img src="du.png" alt="Image 2">
+            <img src="btr.jpg" alt="Image 3">
+        </div>
+
+        <!--Bagian Judul-->
+        <div class="title">
+            <h1>MPL ID SEASON 16</h1>
+            <h2>PLAYOFF</h2>
+            <p>29 Oktober 2025 - 2 November 2025 | NICE PIK 2</p>
+        </div>
+
+        <!--Bar Warna-->
+        <div class="color-bars">
+            <div class="bar pink"></div>
+            <div class="bar blue"></div>
+            <div class="bar orange"></div>
+            <div class="bar green"></div>
+        </div>
+
+        <!--Daftar Artis-->
+        <div class="artist">
+            <h3>TIM YANG AKAN BERTANDING</h3>
+            <p>Navi, Dewa United Esports, BTR by Vitality, EVOS Esports, Alter Ego, ONIC ID</p>
+        </div>
+
+        <!--Bagian Bawah: 3 Gambar-->
+        <div class="bottom-images">
+            <img src="evos.jpeg" alt="Image 4">
+            <img src="ae.jpg" alt="Image 5">
+            <img src="onic.jpg" alt="Image 6">
+        </div>
+    
+    </div>
+</body>
+</html>

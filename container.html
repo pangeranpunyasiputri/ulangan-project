@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page Biodata</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .box {
+            padding: 30px;
+            min-height: 180px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <!-- Judul -->
+    <h2 class="text-center mb-4">Home Page Biodata</h2>
+
+    <!-- Grid -->
+    <div class="row text-center">
+
+        <!-- Biodata -->
+        <div class="col-md-4">
+            <div class="box bg-primary text-white">
+                <h5>Biodata</h5>
+                <p><strong>Nama:</strong><br>Giovani Herbertus Bagung</p>
+                <p><strong>Tanggal Lahir:</strong><br>27 Oktober 2009</p>
+            </div>
+        </div>
+
+        <!-- Kepribadian -->
+        <div class="col-md-4">
+            <div class="box bg-success text-white">
+                <h5>Kepribadian</h5>
+                <p>
+                    Saya adalah orang yang ceria sekali. Selain itu saya merupakan orang yang gampang kasian ke orang lain.
+                    Lalu saya juga orangnya sabar walaupun sering dituduh. Saya orangnya juga ramah kepada orang lain.
+                </p>
+            </div>
+        </div>
+
+        <!-- Hobi -->
+        <div class="col-md-4">
+            <div class="box bg-warning text-dark">
+                <h5>Hobi</h5>
+                <p>
+                    Hobi saya adalah main bola, main game, belajar, dan tidur.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Button Group -->
+    <div class="text-center mt-4">
+        <div class="btn-group" role="group">
+            <button class="btn btn-danger" onclick="like()">Like</button>
+            <button class="btn btn-info text-white" onclick="post()">Post</button>
+            <button class="btn btn-dark" onclick="back()">Back</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- JavaScript -->
+<script>
+    function like() {
+        alert("Terima kasih sudah menyukai halaman ini 👍");
+    }
+
+    function post() {
+        alert("Data berhasil dipost!");
+    }
+
+    function back() {
+        window.history.back();
+    }
+</script>
+
+</body>
+</html>
