@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Siswa - Giovani</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background: #f4f7fb;
+      color: #333;
+    }
+
+    /* ================= HEADER ================= */
+
+    header{
+      position: relative;
+      overflow: hidden;
+
+      background: linear-gradient(
+        135deg,
+        #001f54,
+        #034078,
+        #1282a2,
+        #00a6fb
+      );
+
+      background-size: 400% 400%;
+
+      animation: gradientMove 10s ease infinite;
+
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1{
+      font-size: 42px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    header p{
+      font-size: 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ================= ANIMASI GRADASI ================= */
+
+    @keyframes gradientMove{
+
+      0%{
+        background-position: 0% 50%;
+      }
+
+      50%{
+        background-position: 100% 50%;
+      }
+
+      100%{
+        background-position: 0% 50%;
+      }
+
+    }
+
+    /* ================= METEOR EFFECT ================= */
+
+    .meteor-container{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .meteor{
+      position: absolute;
+      top: -100px;
+      width: 3px;
+      height: 120px;
+
+      background: linear-gradient(
+        white,
+        rgba(255,255,255,0)
+      );
+
+      border-radius: 50%;
+      transform: rotate(45deg);
+
+      opacity: 0.8;
+
+      animation: meteorFall linear infinite;
+    }
+
+    .meteor:nth-child(1){
+      left: 10%;
+      animation-duration: 3s;
+      animation-delay: 0s;
+    }
+
+    .meteor:nth-child(2){
+      left: 25%;
+      animation-duration: 4s;
+      animation-delay: 1s;
+    }
+
+    .meteor:nth-child(3){
+      left: 45%;
+      animation-duration: 3.5s;
+      animation-delay: 2s;
+    }
+
+    .meteor:nth-child(4){
+      left: 65%;
+      animation-duration: 5s;
+      animation-delay: 1.5s;
+    }
+
+    .meteor:nth-child(5){
+      left: 85%;
+      animation-duration: 4.5s;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes meteorFall{
+
+      0%{
+        transform: translate(0,0) rotate(45deg);
+        opacity: 1;
+      }
+
+      100%{
+        transform: translate(-700px,700px) rotate(45deg);
+        opacity: 0;
+      }
+
+    }
+
+    /* ================= CONTAINER ================= */
+
+    .container{
+      width: 90%;
+      max-width: 1100px;
+      margin: 30px auto;
+    }
+
+    /* ================= CARD ================= */
+
+    .card{
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 25px;
+
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+      transition: 0.3s;
+    }
+
+    .card:hover{
+      transform: translateY(-5px);
+    }
+
+    /* ================= BIODATA ================= */
+
+    .biodata{
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .biodata img{
+      width: 200px;
+      border-radius: 15px;
+      border: 4px solid #1976d2;
+    }
+
+    .bio-text p{
+      margin: 8px 0;
+      font-size: 18px;
+    }
+
+    h2{
+      margin-bottom: 15px;
+      color: #0d47a1;
+    }
+
+    /* ================= TABLE ================= */
+
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table th{
+      background: #1976d2;
+      color: white;
+    }
+
+    table th,
+    table td{
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
+
+    /* ================= PROJECT ================= */
+
+    .project-container{
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .project-card{
+      flex: 1;
+      min-width: 250px;
+
+      background: #e3f2fd;
+
+      padding: 20px;
+      border-radius: 15px;
+
+      text-align: center;
+
+      transition: 0.3s;
+    }
+
+    .project-card:hover{
+      transform: scale(1.03);
+    }
+
+    .project-card h3{
+      margin-bottom: 10px;
+      color: #0d47a1;
+    }
+
+    .project-card p{
+      margin-bottom: 15px;
+    }
+
+    button{
+      background: #0d47a1;
+      color: white;
+
+      border: none;
+
+      padding: 10px 18px;
+
+      border-radius: 8px;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+    }
+
+    button:hover{
+      background: #1565c0;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      background: #0d47a1;
+      color: white;
+
+      text-align: center;
+
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:768px){
+
+      .biodata{
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .project-container{
+        flex-direction: column;
+      }
+
+      header h1{
+        font-size: 30px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+
+    <div class="meteor-container">
+
+      <span class="meteor"></span>
+      <span class="meteor"></span>
+      <span class="meteor"></span>
+      <span class="meteor"></span>
+      <span class="meteor"></span>
+
+    </div>
+
+    <h1>Website Pribadi</h1>
+
+    <p>TIK</p>
+
+    <p>Kelas 11 SMA Kolese Kanisius Jakarta</p>
+
+  </header>
+
+  <!-- ================= CONTENT ================= -->
+
+  <div class="container">
+
+    <!-- BIODATA -->
+
+    <div class="card biodata">
+
+      <img src="gw.jpg" alt="Foto Profil">
+
+      <div class="bio-text">
+
+        <h2>Biodata Siswa</h2>
+
+        <p><b>Nama Lengkap:</b> Giovani Herbertus Bagung</p>
+
+        <p><b>Kelas:</b> 11</p>
+
+        <p><b>Sekolah:</b> Kolese Kanisius</p>
+
+        <p><b>Hobi:</b> Menulis novel, bermain game, memasak, dan bermain bola</p>
+
+        <p><b>Cita-cita:</b> Pebisnis</p>
+
+      </div>
+
+    </div>
+
+    <!-- DESKRIPSI -->
+
+    <div class="card">
+
+      <h2>Deskripsi Singkat</h2>
+
+      <p>
+        Halo perkenalkan nama saya Giovani Herbertus Bagung atau biasa dikenal
+        Ebet. Saya sekolah di SMA Kolese Kanisius Jakarta dan sekarang berada
+        di kelas 11. Minat saya adalah menulis novel dan mengarang cerita.
+        Pengalaman saya dalam belajar TIK adalah belajar arduino pada saat SMP
+        dan belajar membuat website pada saat SMA.
+      </p>
+
+    </div>
+
+    <!-- TABEL NILAI -->
+
+    <div class="card">
+
+      <h2>Tabel Nilai</h2>
+
+      <table>
+
+        <tr>
+          <th>No</th>
+          <th>Nama Materi</th>
+          <th>Nilai</th>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Pendidikan Agama</td>
+          <td>84</td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>Bahasa Indonesia</td>
+          <td>83</td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td>PPKN</td>
+          <td>96</td>
+        </tr>
+
+        <tr>
+          <td>4</td>
+          <td>Matematika</td>
+          <td>71</td>
+        </tr>
+
+        <tr>
+          <td>5</td>
+          <td>Sejarah Indonesia</td>
+          <td>94</td>
+        </tr>
+
+        <tr>
+          <td>6</td>
+          <td>Bahasa Inggris</td>
+          <td>77</td>
+        </tr>
+
+        <tr>
+          <td>7</td>
+          <td>Informatika</td>
+          <td>87</td>
+        </tr>
+
+        <tr>
+          <td>8</td>
+          <td>Bahasa Mandarin</td>
+          <td>90</td>
+        </tr>
+
+      </table>
+
+    </div>
+
+    <!-- PROJECT -->
+
+    <div class="card">
+
+      <h2>Project Website</h2>
+
+      <div class="project-container">
+
+        <div class="project-card">
+
+          <!-- PROJECT 1 -->
+
+      <div class="project-card">
+
+        <h3>Container and Grid</h3>
+
+        <p>
+          Project Bootstrap menggunakan
+          container, row, column,
+          dan button group.
+        </p>
+
+        <a href="container.html" class="btn">
+
+          <button onclick="project1()">
+          Lihat Project
+          </button>
+        </a>
+
+      </div>
+
+        <div class="project-card">
+
+          <h3>Card Game</h3>
+
+          <p>
+          Project kartu karakter avengers
+          yang berbagai macam
+        </p>
+
+        <a href="gamekartu.html" class="btn">
+
+          <button onclick="project2()">
+            Lihat Project
+          </button>
+
+        </div>
+
+        <div class="project-card">
+
+          <h3>Poster</h3>
+
+          <p>
+          Project membuat poster
+          dengan menggunakan flex box
+        </p>
+
+        <a href="poster_giovani_11s8_18.html" class="btn">
+
+          <button onclick="project3()">
+            Lihat Project
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+    <p>© 2026 Giovani Herbertus Bagung</p>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    alert("Selamat datang di Website Report Siswa!");
+
+    console.log("Website berhasil dijalankan!");
+
+    function project1(){
+      alert("Membuka Project 1");
+    }
+
+    function project2(){
+      alert("Membuka Project 2");
+    }
+
+    function project3(){
+      alert("Membuka Project 3");
+    }
+
+  </script>
+
+</body>
+</html>
